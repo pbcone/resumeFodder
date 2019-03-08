@@ -29,7 +29,7 @@ func CreateFpModel(resp http.ResponseWriter, r *http.Request, data httprouter.Pa
 }
 
 //GetAllFPModel GET /fpmodel/all
-func GetAllFPModel(resp http.ResponseWriter, r *http.Request, data httprouter.Params) []FpModel {
+func GetAllFPModel(resp http.ResponseWriter, r *http.Request, data httprouter.Params) {
 	dynamoResult := scanDynamoFpmodelTable()
 	result := []FpModel{}
 	resp.Header().Set(`Content-Type`, `application/json`)
